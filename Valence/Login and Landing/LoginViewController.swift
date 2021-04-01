@@ -33,6 +33,11 @@ class LoginViewController: UIViewController {
     
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
         super.viewDidLoad()
         
         rememberMeToggle.isOn = UserDefaults.standard.bool(forKey: "RememberMe")
