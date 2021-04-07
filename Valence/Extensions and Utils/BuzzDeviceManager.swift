@@ -16,7 +16,7 @@ class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
     
     init() {
         buzzManager = BuzzManager()
-        buzzManager?.delegate = self 
+        buzzManager?.delegate = self
     }
     
     func scan() {
@@ -95,34 +95,35 @@ class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
     }
     
     func runHappy() {
-        setMotorPattern(motors: [[0,125,0,0],
-                                 [0,0,125,0]], motorRunTime: 0.5)
+        setMotorPattern(motors: [[0,0,0,150],
+                                 [0,0,150,0],
+                                 [0,150,0,0],
+                                 [150,0,0,0]], motorRunTime: 0.25)
     }
     
     func runSad() {
-        setMotorPattern(motors: [[75, 0, 0, 0],
-                                 [0, 75, 0, 0],
-                                 [0, 0, 75, 0],
-                                 [0, 0, 0, 75]], motorRunTime: 0.5)
+        setMotorPattern(motors: [[150,0,0,0],
+                                 [0,0,0,150]], motorRunTime: 0.5)
     }
     
     func runSurprised() {
-        setMotorPattern(motors: [[0,75,75,0]], motorRunTime: 1)
+        setMotorPattern(motors: [[75,0,75,0],
+                                 [0,225,0,0]], motorRunTime: 0.5)
     }
     
     func runFearful() {
-        setMotorPattern(motors: [[150,0,0,0],
-                                 [0,150,0,0],
-                                 [0,0,150,0]], motorRunTime: 0.5)
+        setMotorPattern(motors: [[175,0,0,0],
+                                 [0,50,0,0],
+                                 [0,0,175,0],
+                                 [0,0,0,50]], motorRunTime: 0.25)
     }
     
     func runDisgust() {
-        setMotorPattern(motors: [[0,100,0,0],
-                                 [0,0,100,0]], motorRunTime: 0.5)
+        setMotorPattern(motors: [[0,100,100,0]], motorRunTime: 1)
     }
     
     func runAngry() {
-        setMotorPattern(motors: [[250,0,0,250]], motorRunTime: 1)
+        setMotorPattern(motors: [[255,0,0,255]], motorRunTime: 0.75)
     }
     
     func runNeutral() {
@@ -149,3 +150,4 @@ class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
     }
     
 }
+
