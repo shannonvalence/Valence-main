@@ -23,6 +23,12 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
         feedbackField.delegate = self
     }
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     //MARK: - Text Field Function
     ///Clear the text when begin editing happens, only for the first time.
     func textViewDidBeginEditing(_ textView: UITextView) {
