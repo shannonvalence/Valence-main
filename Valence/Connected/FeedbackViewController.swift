@@ -24,9 +24,10 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
     }
     
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
         self.view.endEditing(true)
-        return false
+        return true
     }
     
     //MARK: - Text Field Function

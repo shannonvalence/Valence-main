@@ -8,18 +8,23 @@
 import UIKit
 import FirebaseAuth
 
-class RecoverAcctViewController: UIViewController {
+class RecoverAcctViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailinputField: UITextField!
     @IBOutlet weak var emailWarningLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        emailinputField.delegate = self
+        
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
         self.view.endEditing(true)
-        return false
+        return true
     }
     @IBAction func resetTapped(_ sender: Any) {
         emailWarningLabel.isHidden = false

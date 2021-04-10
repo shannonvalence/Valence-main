@@ -12,7 +12,7 @@ import SwiftUI
 
 
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     //MARK: - Class Properties
@@ -39,11 +39,10 @@ class LoginViewController: UIViewController {
             // Fallback on earlier versions
         }
         super.viewDidLoad()
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+
         rememberMeToggle.isOn = UserDefaults.standard.bool(forKey: "RememberMe")
         
         if UserDefaults.standard.bool(forKey: "RememberMe") {
@@ -53,6 +52,11 @@ class LoginViewController: UIViewController {
             }
         }
         
+    }
+    
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
     
     @IBAction func loginTapped(_ sender: Any) {

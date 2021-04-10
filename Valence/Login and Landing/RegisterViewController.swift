@@ -10,7 +10,7 @@ import Firebase
 
 
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Class Properties
     ///@IBOutlets
     @IBOutlet weak var emailTextField: UITextField!
@@ -34,6 +34,10 @@ class RegisterViewController: UIViewController {
             // Fallback on earlier versions
         }
         self.hideKeyboardWhenTappedAround()
+        
+        emailTextField.delegate = self
+        passTextField.delegate = self
+        confirmPassTextField.delegate = self
     }
     
     
