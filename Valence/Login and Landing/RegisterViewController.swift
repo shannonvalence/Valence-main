@@ -36,6 +36,12 @@ class RegisterViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     //MARK: - Create Account Tapped
     @IBAction func createAccountTapped(_ sender: Any) {
         validateAllFields()

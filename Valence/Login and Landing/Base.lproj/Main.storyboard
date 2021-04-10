@@ -23,6 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="background__3__png.png" translatesAutoresizingMaskIntoConstraints="NO" id="JFv-K8-v50">
+
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
                             </imageView>
@@ -192,6 +193,35 @@
                                     <action selector="rememberToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZvA-CS-V49"/>
                                 </connections>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember Login?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dER-vA-9EM">
+                                <rect key="frame" x="20" y="721" width="915" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9z6-En-Y4X">
+                                <rect key="frame" x="30" y="764" width="964" height="371"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Forgot Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="LEY-Cm-ucq" kind="show" id="1gb-a8-g8J"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqX-T8-2Y7">
+                                <rect key="frame" x="30" y="584" width="368" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bs7-Un-aX7"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
@@ -201,10 +231,10 @@
                         </accessibility>
                         <constraints>
                             <constraint firstItem="rPb-sk-w77" firstAttribute="centerX" secondItem="9z6-En-Y4X" secondAttribute="centerX" id="8Ic-Oi-3pl"/>
+
                             <constraint firstItem="JFv-K8-v50" firstAttribute="centerX" secondItem="bs7-Un-aX7" secondAttribute="centerX" id="AxX-xl-1bZ"/>
                             <constraint firstItem="JFv-K8-v50" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="HD6-7s-1Gz"/>
                             <constraint firstAttribute="trailing" secondItem="z6w-3s-l2L" secondAttribute="trailing" constant="30" id="HqC-Gx-BFf"/>
-                            <constraint firstItem="JFv-K8-v50" firstAttribute="leading" secondItem="bs7-Un-aX7" secondAttribute="leading" id="PdK-2c-B1a"/>
                             <constraint firstItem="9z6-En-Y4X" firstAttribute="trailing" secondItem="z6w-3s-l2L" secondAttribute="trailing" id="RPz-47-YTL"/>
                             <constraint firstItem="JFv-K8-v50" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="blb-xP-Bjp"/>
                             <constraint firstItem="9z6-En-Y4X" firstAttribute="top" secondItem="z6w-3s-l2L" secondAttribute="bottom" constant="22" id="e1s-Gu-bC6"/>
@@ -213,6 +243,8 @@
                             <constraint firstItem="bs7-Un-aX7" firstAttribute="trailing" secondItem="iaV-UV-uxM" secondAttribute="trailing" constant="196" id="p6c-nC-3C5"/>
                             <constraint firstItem="rPb-sk-w77" firstAttribute="top" secondItem="z6w-3s-l2L" secondAttribute="bottom" constant="25" id="pzy-Pu-TiI"/>
                             <constraint firstItem="z6w-3s-l2L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="vMG-Ot-kfu"/>
+                            <constraint firstItem="JFv-K8-v50" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="vQu-0n-Qnp"/>
+                            <constraint firstItem="JFv-K8-v50" firstAttribute="leading" secondItem="bs7-Un-aX7" secondAttribute="leading" id="xbD-Ci-Yhh"/>
                             <constraint firstItem="iaV-UV-uxM" firstAttribute="top" secondItem="z6w-3s-l2L" secondAttribute="bottom" constant="42" id="xq2-0d-9nC"/>
                             <constraint firstItem="e3b-7b-dBz" firstAttribute="top" secondItem="bs7-Un-aX7" secondAttribute="top" constant="91" id="zcn-oN-0a3"/>
                         </constraints>
@@ -229,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708.69565217391312" y="114.50892857142857"/>
+            <point key="canvasLocation" x="707.8125" y="113.76281112737919"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="6w8-aT-JQ9">
@@ -239,8 +271,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" image="image.png" translatesAutoresizingMaskIntoConstraints="NO" id="CKm-ge-Ovi">
-                                <rect key="frame" x="-1" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="image.png" translatesAutoresizingMaskIntoConstraints="NO" id="CKm-ge-Ovi">
+                                <rect key="frame" x="0.0" y="-38" width="1024" height="1442"/>
                                 <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVq-eN-qAB">
@@ -481,7 +513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0S-XY-Hw9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1648" y="-216"/>
+            <point key="canvasLocation" x="1647.0703125" y="-217.42313323572472"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XhG-Ns-uXf">
@@ -512,8 +544,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" image="image.png" translatesAutoresizingMaskIntoConstraints="NO" id="feL-mu-gmX">
-                                <rect key="frame" x="0.0" y="-1104" width="2000" height="2000"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="image.png" translatesAutoresizingMaskIntoConstraints="NO" id="feL-mu-gmX">
+                                <rect key="frame" x="0.0" y="-38" width="1024" height="1442"/>
                                 <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMT-wR-l6g">
@@ -609,7 +641,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvB-OM-tDL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1648" y="467"/>
+            <point key="canvasLocation" x="1647.0703125" y="466.47144948755488"/>
         </scene>
         <!--Connect Buzz View Controller-->
         <scene sceneID="bbi-lB-VDl">
