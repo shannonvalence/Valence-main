@@ -17,6 +17,10 @@ class RecoverAcctViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     @IBAction func resetTapped(_ sender: Any) {
         emailWarningLabel.isHidden = false
         

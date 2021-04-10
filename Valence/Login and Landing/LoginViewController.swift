@@ -39,7 +39,11 @@ class LoginViewController: UIViewController {
             // Fallback on earlier versions
         }
         super.viewDidLoad()
-        
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
         rememberMeToggle.isOn = UserDefaults.standard.bool(forKey: "RememberMe")
         
         if UserDefaults.standard.bool(forKey: "RememberMe") {
