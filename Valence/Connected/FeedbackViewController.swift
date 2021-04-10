@@ -4,7 +4,6 @@
 //
 //  Created by Matthew Kaulfers on 2/4/21.
 //
-
 import Foundation
 import UIKit
 import SwiftUI
@@ -23,6 +22,13 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
         feedbackField.delegate = self
     }
     
+    
+    
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
     //MARK: - Text Field Function
     ///Clear the text when begin editing happens, only for the first time.
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -33,4 +39,3 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
         }
     }
 }
-
