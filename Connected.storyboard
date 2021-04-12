@@ -42,7 +42,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBk-2M-nQv">
-                                        <rect key="frame" x="40.333333333333343" y="140.66666666666669" width="80.333333333333314" height="34"/>
+                                        <rect key="frame" x="40.333333333333336" y="140.66666666666669" width="80.333333333333314" height="34"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Train">
@@ -59,7 +59,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVF-JE-QtX">
-                                        <rect key="frame" x="40.333333333333343" y="219.66666666666663" width="80.333333333333314" height="33"/>
+                                        <rect key="frame" x="40.333333333333336" y="219.66666666666663" width="80.333333333333314" height="33"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -76,7 +76,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0I-Da-aoJ">
-                                        <rect key="frame" x="29.666666666666629" y="297.66666666666663" width="102" height="30"/>
+                                        <rect key="frame" x="29.666666666666657" y="297.66666666666663" width="102" height="30"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <state key="normal" title="Give Feedback">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -446,7 +446,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="111"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTN-M6-tHt">
-                                                <rect key="frame" x="78.666666666666686" y="0.0" width="157.66666666666663" height="33"/>
+                                                <rect key="frame" x="78.666666666666671" y="0.0" width="157.66666666666663" height="33"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Play Sound">
@@ -459,7 +459,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which emotion are they expressing?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8O-FK-icg">
-                                                <rect key="frame" x="49" y="63" width="217.33333333333337" height="48"/>
+                                                <rect key="frame" x="49.000000000000014" y="63" width="217.33333333333337" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
