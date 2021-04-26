@@ -29,6 +29,7 @@ class TestViewController: UIViewController {
     private var storageRef: StorageReference?
     private var dbRef: DatabaseReference!
     private var emotionName: String = ""
+    private var filename: String = ""
     private var userAnswer: String = "0"
     private var totalAnswers: Int = 0
     private var correctAnswers: Int = 0
@@ -88,6 +89,7 @@ class TestViewController: UIViewController {
                     self.player = try AVAudioPlayer(data: data)
                     guard let player = self.player else { return }
                     self.emotionName = randomSound.getEmotionName()
+                    self.filename = randomSound
                     
                     player.play()
                     self.startBuzz()
@@ -197,9 +199,10 @@ class TestViewController: UIViewController {
         calculateScore(isCorrect: isCorrect)
         
         let test = try? TestResult(timestamp: Date(),
-                              correctAnswer: emotionName,
-                              userAnswer: userAnswer,
-                              isCorrect: isCorrect ? 1 : 0).asDictionary()
+                                   correctAnswer: emotionName,
+                                   filename: filename,
+                                   userAnswer: userAnswer,
+                                   isCorrect: isCorrect ? 1 : 0).asDictionary()
         let user = try? User(deviceId: deviceId,
                         correctAnswers: correctAnswers,
                         totalAnswers: totalAnswers,
@@ -252,6 +255,7 @@ struct User: Codable {
 struct TestResult: Codable {
     let timestamp: Date
     let correctAnswer: String
+    let filename: String
     let userAnswer: String
     let isCorrect: Int
 }
