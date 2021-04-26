@@ -54,6 +54,7 @@
 		E91E24B22636915C0081B34A /* MicrophoneReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E24AB2636915B0081B34A /* MicrophoneReader.swift */; };
 		E91E24B32636915C0081B34A /* RecognizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E24AC2636915C0081B34A /* RecognizeModel.swift */; };
 		E91E24B6263691630081B34A /* model_v5.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E91E24B5263691630081B34A /* model_v5.mlmodel */; };
+		E977546E26376D95001EB523 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E977546D26376D95001EB523 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		E91E24AB2636915B0081B34A /* MicrophoneReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrophoneReader.swift; sourceTree = "<group>"; };
 		E91E24AC2636915C0081B34A /* RecognizeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeModel.swift; sourceTree = "<group>"; };
 		E91E24B5263691630081B34A /* model_v5.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = model_v5.mlmodel; sourceTree = "<group>"; };
+		E977546D26376D95001EB523 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				E91E24982636903C0081B34A /* String+Extensions.swift */,
 				E91E249B263690410081B34A /* UIWindow.swift */,
 				E91E249E263690460081B34A /* Encodable.swift */,
+				E977546D26376D95001EB523 /* Date.swift */,
 			);
 			path = "Extensions and Utils";
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				E91E24B02636915C0081B34A /* AudioRecordingManager.swift in Sources */,
 				E91E24AF2636915C0081B34A /* CategoryRepository.swift in Sources */,
 				E91E249626368FFF0081B34A /* KeychainHelper.swift in Sources */,
+				E977546E26376D95001EB523 /* Date.swift in Sources */,
 				AE91409F25BF467400678345 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -48,7 +48,7 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
     @IBAction func sendFeedback() {
         let deviceId = KeychainHelper.shared.getDeviceId()
         let dbRef = Database.database().reference()
-        dbRef.child("UserFeedback").child(deviceId).child(Date().description).setValue(feedbackField.text) { error, _ in
+        dbRef.child("UserFeedback").child(deviceId).child(Date().getDateInStringPT).setValue(feedbackField.text) { error, _ in
             var alertTitle = ""
             var alertMessage: String? = nil
             if error != nil {

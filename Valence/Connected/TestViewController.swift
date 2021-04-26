@@ -204,7 +204,7 @@ class TestViewController: UIViewController {
                         correctAnswers: correctAnswers,
                         totalAnswers: totalAnswers,
                         overallScore: overallScore).asDictionary()
-        dbRef.child("UserTests").child(deviceId).child(sessionId).child(Date().description).setValue(test)
+        dbRef.child("UserTests").child(deviceId).child(sessionId).child(Date().getDateInStringPT).setValue(test)
         dbRef.child("Users").child(deviceId).setValue(user)
     }
     
