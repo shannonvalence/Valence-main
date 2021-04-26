@@ -41,6 +41,19 @@
 		AEEDA8D525CBC8B000BBF3A9 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEDA8D425CBC8B000BBF3A9 /* FeedbackViewController.swift */; };
 		AEEEF94225CC716B004D98FC /* BuzzDeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEEF94125CC716B004D98FC /* BuzzDeviceManager.swift */; };
 		D5FC365D0407C49128EEBB81 /* Pods_Valence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C48F6ACB9182740B9C7B03C /* Pods_Valence.framework */; };
+		E91E247F263681580081B34A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E247E263681580081B34A /* TestViewController.swift */; };
+		E91E249626368FFF0081B34A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E249526368FFF0081B34A /* KeychainHelper.swift */; };
+		E91E24992636903C0081B34A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E24982636903C0081B34A /* String+Extensions.swift */; };
+		E91E249C263690410081B34A /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E249B263690410081B34A /* UIWindow.swift */; };
+		E91E249F263690460081B34A /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E249E263690460081B34A /* Encodable.swift */; };
+		E91E24AD2636915C0081B34A /* AudioSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E24A62636915A0081B34A /* AudioSampler.swift */; };
+		E91E24AE2636915C0081B34A /* SoundRecognizerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E24A72636915A0081B34A /* SoundRecognizerEngine.swift */; };
+		E91E24AF2636915C0081B34A /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E24A82636915A0081B34A /* CategoryRepository.swift */; };
+		E91E24B02636915C0081B34A /* AudioRecordingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E24A92636915B0081B34A /* AudioRecordingManager.swift */; };
+		E91E24B12636915C0081B34A /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E24AA2636915B0081B34A /* AudioRecorder.swift */; };
+		E91E24B22636915C0081B34A /* MicrophoneReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E24AB2636915B0081B34A /* MicrophoneReader.swift */; };
+		E91E24B32636915C0081B34A /* RecognizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E24AC2636915C0081B34A /* RecognizeModel.swift */; };
+		E91E24B6263691630081B34A /* model_v5.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E91E24B5263691630081B34A /* model_v5.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +93,19 @@
 		AE9FF36225CCDDD800FA3E64 /* Emotion_Voice_Detection_Model1.h5 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Emotion_Voice_Detection_Model1.h5; sourceTree = "<group>"; };
 		AEEDA8D425CBC8B000BBF3A9 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		AEEEF94125CC716B004D98FC /* BuzzDeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuzzDeviceManager.swift; sourceTree = "<group>"; };
+		E91E247E263681580081B34A /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		E91E249526368FFF0081B34A /* KeychainHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		E91E24982636903C0081B34A /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		E91E249B263690410081B34A /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
+		E91E249E263690460081B34A /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		E91E24A62636915A0081B34A /* AudioSampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSampler.swift; sourceTree = "<group>"; };
+		E91E24A72636915A0081B34A /* SoundRecognizerEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundRecognizerEngine.swift; sourceTree = "<group>"; };
+		E91E24A82636915A0081B34A /* CategoryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
+		E91E24A92636915B0081B34A /* AudioRecordingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecordingManager.swift; sourceTree = "<group>"; };
+		E91E24AA2636915B0081B34A /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		E91E24AB2636915B0081B34A /* MicrophoneReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrophoneReader.swift; sourceTree = "<group>"; };
+		E91E24AC2636915C0081B34A /* RecognizeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeModel.swift; sourceTree = "<group>"; };
+		E91E24B5263691630081B34A /* model_v5.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = model_v5.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +134,13 @@
 		AE7B1F8625C707B900F5A219 /* Extensions and Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E91E249526368FFF0081B34A /* KeychainHelper.swift */,
 				AE7B1F8325C707B300F5A219 /* Utilities.swift */,
 				AE7869D225C7670000EB7B9D /* BackgroundProcess.swift */,
 				AEEEF94125CC716B004D98FC /* BuzzDeviceManager.swift */,
+				E91E24982636903C0081B34A /* String+Extensions.swift */,
+				E91E249B263690410081B34A /* UIWindow.swift */,
+				E91E249E263690460081B34A /* Encodable.swift */,
 			);
 			path = "Extensions and Utils";
 			sourceTree = "<group>";
@@ -186,12 +216,29 @@
 		AE9140BB25BF565A00678345 /* Connected */ = {
 			isa = PBXGroup;
 			children = (
+				E91E24A5263691500081B34A /* MicrophoneReader */,
 				AE9140BD25BF569400678345 /* Connected.storyboard */,
 				AE81049325CA24120070E6BE /* BuzzConnected.swift */,
 				AEEDA8D425CBC8B000BBF3A9 /* FeedbackViewController.swift */,
+				E91E247E263681580081B34A /* TestViewController.swift */,
 				AE63991E25CCF5D800008B84 /* TrainViewController.swift */,
 			);
 			path = Connected;
+			sourceTree = "<group>";
+		};
+		E91E24A5263691500081B34A /* MicrophoneReader */ = {
+			isa = PBXGroup;
+			children = (
+				E91E24AA2636915B0081B34A /* AudioRecorder.swift */,
+				E91E24A92636915B0081B34A /* AudioRecordingManager.swift */,
+				E91E24A62636915A0081B34A /* AudioSampler.swift */,
+				E91E24A82636915A0081B34A /* CategoryRepository.swift */,
+				E91E24AB2636915B0081B34A /* MicrophoneReader.swift */,
+				E91E24AC2636915C0081B34A /* RecognizeModel.swift */,
+				E91E24A72636915A0081B34A /* SoundRecognizerEngine.swift */,
+				E91E24B5263691630081B34A /* model_v5.mlmodel */,
+			);
+			path = MicrophoneReader;
 			sourceTree = "<group>";
 		};
 		F09EB2748AB53CAFEF0284DC /* Frameworks */ = {
@@ -339,11 +386,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E91E24B22636915C0081B34A /* MicrophoneReader.swift in Sources */,
+				E91E247F263681580081B34A /* TestViewController.swift in Sources */,
+				E91E249F263690460081B34A /* Encodable.swift in Sources */,
+				E91E24B12636915C0081B34A /* AudioRecorder.swift in Sources */,
 				AE9140A125BF467400678345 /* LoginViewController.swift in Sources */,
 				AE7B1F7A25C7067C00F5A219 /* RegisterViewController.swift in Sources */,
+				E91E24AD2636915C0081B34A /* AudioSampler.swift in Sources */,
 				AE63991F25CCF5D800008B84 /* TrainViewController.swift in Sources */,
+				E91E24992636903C0081B34A /* String+Extensions.swift in Sources */,
 				AEEDA8D525CBC8B000BBF3A9 /* FeedbackViewController.swift in Sources */,
+				E91E249C263690410081B34A /* UIWindow.swift in Sources */,
+				E91E24B6263691630081B34A /* model_v5.mlmodel in Sources */,
+				E91E24AE2636915C0081B34A /* SoundRecognizerEngine.swift in Sources */,
 				AE7B1F8025C706B000F5A219 /* ConnectBuzzViewController.swift in Sources */,
+				E91E24B32636915C0081B34A /* RecognizeModel.swift in Sources */,
 				AE7B1F7D25C7069000F5A219 /* RecoverAcctViewController.swift in Sources */,
 				AE91409D25BF467400678345 /* AppDelegate.swift in Sources */,
 				AE9140A725BF467400678345 /* Valence.xcdatamodeld in Sources */,
@@ -351,6 +408,9 @@
 				AE7869D325C7670000EB7B9D /* BackgroundProcess.swift in Sources */,
 				AE7B1F8425C707B300F5A219 /* Utilities.swift in Sources */,
 				AEEEF94225CC716B004D98FC /* BuzzDeviceManager.swift in Sources */,
+				E91E24B02636915C0081B34A /* AudioRecordingManager.swift in Sources */,
+				E91E24AF2636915C0081B34A /* CategoryRepository.swift in Sources */,
+				E91E249626368FFF0081B34A /* KeychainHelper.swift in Sources */,
 				AE91409F25BF467400678345 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,13 +560,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KTT489CN3H;
+				DEVELOPMENT_TEAM = 8PS4657Q7G;
 				INFOPLIST_FILE = Valence/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kaulfers.Valence;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chloe.Valence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -520,13 +581,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KTT489CN3H;
+				DEVELOPMENT_TEAM = 8PS4657Q7G;
 				INFOPLIST_FILE = Valence/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kaulfers.Valence;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chloe.Valence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

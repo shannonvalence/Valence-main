@@ -23,6 +23,9 @@ class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
         buzzManager!.startScanning(timeoutSecs: -1, assumeDisappearanceAfter: 1)
     }
     
+    func stop() {
+        buzzManager?.stopScanning()
+    }
     
     func didUpdateState(_ buzzManager: BuzzManager, to state: BuzzManagerState) {
     }
@@ -148,6 +151,4 @@ class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
             }
         }
     }
-    
 }
-

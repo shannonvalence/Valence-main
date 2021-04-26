@@ -9,9 +9,11 @@ import Foundation
 import UIKit
 import BuzzBLE
 import FirebaseAuth
+import Combine
 
 class BuzzConnected: UIViewController {
-    
+    private var recognizeModel = RecognizeModel()
+    private var cancellable: AnyCancellable?
     @IBOutlet weak var batteryLabel: UILabel!
     var buzzManager: BuzzDeviceManager?
     
@@ -20,13 +22,30 @@ class BuzzConnected: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateBattery), name: NSNotification.Name(rawValue: "batteryUpdated"), object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cancellable = recognizeModel.objectWillChange.sink { [weak self] in
+            self?.recognized()
+        }
+        recognizeModel.setup()
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+          super.viewWillDisappear(animated)
+        buzzManager?.buzzDevice?.stopMotors()
+        recognizeModel.stopRecognizing()
+          self.navigationController?.navigationBar.isHidden = false
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.destination is TrainViewController {
             let dest = segue.destination as! TrainViewController
             dest.buzzManager = buzzManager
-        } else {
-            
+        } else if segue.destination is TestViewController {
+            let dest = segue.destination as! TestViewController
+            dest.buzzManager = buzzManager
         }
     }
     
@@ -47,6 +66,28 @@ class BuzzConnected: UIViewController {
             
         } catch let error {
             print(error.localizedDescription)
+        }
+    }
+    
+    func recognized() {
+        print("\(recognizeModel.categoryTitle) (\(recognizeModel.categoryIndex)) \(recognizeModel.percentage) %")
+        switch recognizeModel.categoryIndex {
+        case 0:
+            buzzManager?.runAngry()
+        case 1:
+            buzzManager?.runDisgust()
+        case 2:
+            buzzManager?.runFearful()
+        case 3:
+            buzzManager?.runHappy()
+        case 4:
+            buzzManager?.runNeutral()
+        case 5:
+            buzzManager?.runSad()
+        case 6:
+            buzzManager?.runSurprised()
+        default:
+            fatalError("no index category available")
         }
     }
 }

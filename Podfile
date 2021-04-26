@@ -8,7 +8,9 @@ target 'Valence' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Crashlytics'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Database'
+  pod 'KeychainAccess'
+  pod 'RosaKit'
   
-  # Pods for Valence
-
 end
