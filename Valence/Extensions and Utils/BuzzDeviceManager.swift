@@ -23,6 +23,9 @@ class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
         buzzManager!.startScanning(timeoutSecs: -1, assumeDisappearanceAfter: 1)
     }
     
+    func stop() {
+        buzzManager?.stopScanning()
+    }
     
     func didUpdateState(_ buzzManager: BuzzManager, to state: BuzzManagerState) {
     }
@@ -149,5 +152,37 @@ class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
         }
     }
     
+    func buzz10Times(emotionName: Emotion) {
+        var index = 1
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { t in
+            switch emotionName {
+            case .Angry:
+                self.runAngry()
+            case .Disgust:
+                self.runDisgust()
+            case .Fearful:
+                self.runFearful()
+            case .Happy:
+                self.runHappy()
+            case .Neutral:
+                self.runNeutral()
+            case .Sad:
+                self.runSad()
+            case .Surprise:
+                self.runSurprised()
+            default:
+                fatalError("no index category available")
+            }
+            print("buzz")
+            
+            if index != 10 {
+                index += 1
+            } else {
+                t.invalidate()
+                Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { t in
+                    t.invalidate()
+                }
+            }
+        }
+    }
 }
-

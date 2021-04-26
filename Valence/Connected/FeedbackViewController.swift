@@ -6,13 +6,13 @@
 //
 import Foundation
 import UIKit
-import SwiftUI
+import Firebase
 
 class FeedbackViewController: UIViewController, UITextViewDelegate {
     //MARK: - Class Properties
     ///@IBOutlets
     @IBOutlet weak var feedbackField: UITextView!
-    
+    @IBOutlet weak var sendButton: UIButton!
     
     ///Custom Properties
     
@@ -22,20 +22,47 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
         feedbackField.delegate = self
     }
     
-    
-    
-    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return true
-    }
-    
     //MARK: - Text Field Function
     ///Clear the text when begin editing happens, only for the first time.
     func textViewDidBeginEditing(_ textView: UITextView) {
-        let text = textView.text
-        
-        if text == "Enter your feedback here." {
+        sendButton.isEnabled = true
+        if textView.text == "Enter your feedback here." {
             textView.text = ""
+        }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView.text == "" {
+            sendButton.isEnabled = false
+        } else {
+            sendButton.isEnabled = true
+        }
+
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    @IBAction func sendFeedback() {
+        let deviceId = KeychainHelper.shared.getDeviceId()
+        let dbRef = Database.database().reference()
+        dbRef.child("UserFeedback").child(deviceId).child(Date().description).setValue(feedbackField.text) { error, _ in
+            var alertTitle = ""
+            var alertMessage: String? = nil
+            if error != nil {
+                alertTitle = "Feedback could not be saved"
+                alertMessage = "\(error.debugDescription)"
+            } else {
+                alertTitle = "Feedback has been sent successfully."
+                self.feedbackField.text = ""
+            }
+            let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+            self.present(alert, animated: true)
         }
     }
 }

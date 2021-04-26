@@ -8,15 +8,18 @@
 import UIKit
 import CoreData
 import Firebase
+import KeychainAccess
 
 @available(iOS 13.0, *)
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
+    static var shared: AppDelegate { UIApplication.shared.delegate as! AppDelegate }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        KeychainHelper.shared.setSessionId()
         return true
     }
 
