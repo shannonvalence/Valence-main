@@ -113,26 +113,7 @@ class TestViewController: UIViewController {
     }
     
     private func startBuzz() {
-        switch emotionName {
-        case Emotion.Angry.rawValue:
-            buzzManager?.runAngry()
-        case Emotion.Disgust.rawValue:
-            buzzManager?.runDisgust()
-        case Emotion.Fearful.rawValue:
-            buzzManager?.runFearful()
-        case Emotion.Happy.rawValue:
-            buzzManager?.runHappy()
-        case Emotion.Neutral.rawValue:
-            buzzManager?.runNeutral()
-        case Emotion.Sad.rawValue:
-            buzzManager?.runSad()
-        case Emotion.Surprise.rawValue:
-            buzzManager?.runSurprised()
-        case Emotion.Silence.rawValue:
-            print("Silence")
-        default:
-            fatalError("no emotion name??")
-        }
+        buzzManager?.buzz10Times(emotionName: Emotion(rawValue: emotionName)!)
     }
     
     private func stopBuzz() {
