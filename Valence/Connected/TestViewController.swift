@@ -92,10 +92,7 @@ class TestViewController: UIViewController {
                     self.filename = randomSound
                     
                     player.play()
-                    self.startBuzz()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                        self.stopBuzz()
-                    }
+                    self.startTestBuzz()
                     self.showButtons()
                     
                 } catch let error {
@@ -114,7 +111,7 @@ class TestViewController: UIViewController {
         neutralButton.isHidden = false
     }
     
-    private func startBuzz() {
+    private func startTestBuzz() {
         stopBuzz()
         buzzManager?.buzz10Times(emotionName: Emotion(rawValue: emotionName)!)
     }

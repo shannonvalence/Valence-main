@@ -13,6 +13,7 @@ class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
     var buzzDevice: Buzz?
     var buzzBattery: Int?
     var buzzUUID: UUID?
+    var runCount = 0
     
     init() {
         buzzManager = BuzzManager()
@@ -166,34 +167,51 @@ class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
         }
     }
     
-    func runEmotion(emotionName: Emotion, completion: @escaping () -> Void) {
+    func runEmotion(emotionName: Emotion) {
         switch emotionName {
         case .Angry:
-            self.runAngry() { completion() }
+            self.runAngry() {
+                self.repeatEmotionBuzz(emotionName: emotionName)
+            }
         case .Disgust:
-            self.runDisgust() { completion() }
+            self.runDisgust() {
+                self.repeatEmotionBuzz(emotionName: emotionName)
+            }
         case .Fearful:
-            self.runFearful() { completion() }
+            self.runFearful() {
+                self.repeatEmotionBuzz(emotionName: emotionName)
+            }
         case .Happy:
-            self.runHappy() { completion() }
+            self.runHappy() {
+                self.repeatEmotionBuzz(emotionName: emotionName)
+            }
         case .Neutral:
-            self.runNeutral() { completion() }
+            self.runNeutral() {
+                self.repeatEmotionBuzz(emotionName: emotionName)
+            }
         case .Sad:
-            self.runSad() { completion() }
+            self.runSad() {
+                self.repeatEmotionBuzz(emotionName: emotionName)
+            }
         case .Surprise:
-            self.runSurprised() { completion() }
+            self.runSurprised() {
+                self.repeatEmotionBuzz(emotionName: emotionName)
+            }
         default:
             fatalError("no index category available")
         }
     }
     
     func buzz10Times(emotionName: Emotion) {
-        var runCount = 0
-        while runCount == 10 {
-            runEmotion(emotionName: emotionName) {
-                runCount += 1
-            }
-            print("buzzed")
+        runCount = 0
+        runEmotion(emotionName: emotionName)
+    }
+    
+    func repeatEmotionBuzz(emotionName: Emotion) {
+        self.runCount += 1
+        print("buzzed")
+        if runCount != 10 {
+            self.runEmotion(emotionName: emotionName)
         }
     }
 }
