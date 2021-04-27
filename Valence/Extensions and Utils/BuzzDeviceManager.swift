@@ -97,92 +97,103 @@ class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "batteryUpdated"), object: nil)
     }
     
-    func runHappy() {
+    func runHappy(completion: (() -> Void)? = nil) {
         setMotorPattern(motors: [[0,0,0,150],
                                  [0,0,150,0],
                                  [0,150,0,0],
-                                 [150,0,0,0]], motorRunTime: 0.25)
+                                 [150,0,0,0]], motorRunTime: 0.25) {
+            completion?()
+        }
     }
     
-    func runSad() {
+    func runSad(completion: (() -> Void)? = nil) {
         setMotorPattern(motors: [[150,0,0,0],
-                                 [0,0,0,150]], motorRunTime: 0.5)
+                                 [0,0,0,150]], motorRunTime: 0.5) {
+            completion?()
+        }
     }
     
-    func runSurprised() {
+    func runSurprised(completion: (() -> Void)? = nil) {
         setMotorPattern(motors: [[75,0,75,0],
-                                 [0,225,0,0]], motorRunTime: 0.5)
+                                 [0,225,0,0]], motorRunTime: 0.5) {
+            completion?()
+        }
     }
     
-    func runFearful() {
+    func runFearful(completion: (() -> Void)? = nil) {
         setMotorPattern(motors: [[175,0,0,0],
                                  [0,50,0,0],
                                  [0,0,175,0],
-                                 [0,0,0,50]], motorRunTime: 0.25)
+                                 [0,0,0,50]], motorRunTime: 0.25) {
+            completion?()
+        }
     }
     
-    func runDisgust() {
-        setMotorPattern(motors: [[0,100,100,0]], motorRunTime: 1)
+    func runDisgust(completion: (() -> Void)? = nil) {
+        setMotorPattern(motors: [[0,100,100,0]], motorRunTime: 1) {
+            completion?()
+        }
     }
     
-    func runAngry() {
-        setMotorPattern(motors: [[255,0,0,255]], motorRunTime: 0.75)
+    func runAngry(completion: (() -> Void)? = nil) {
+        setMotorPattern(motors: [[255,0,0,255]], motorRunTime: 0.75) {
+            completion?()
+        }
     }
     
-    func runNeutral() {
-        setMotorPattern(motors: [[30,30,30,30]], motorRunTime: 1)
+    func runNeutral(completion: (() -> Void)? = nil) {
+        setMotorPattern(motors: [[30,30,30,30]], motorRunTime: 1) {
+            completion?()
+        }
     }
     
-    func setMotorPattern(motors: [[UInt8]], motorRunTime seconds: Double) {
+    func setMotorPattern(motors: [[UInt8]], motorRunTime seconds: Double, completion: @escaping () -> Void) {
         buzzDevice?.clearMotorsQueue()
         var motorIndex = 0
         Timer.scheduledTimer(withTimeInterval: seconds, repeats: true) { t in
             self.buzzDevice?.stopMotors()
-            self.buzzDevice?.setMotorVibration(motors[motorIndex][0], motors[motorIndex][1], motors[motorIndex][2], motors[motorIndex][3])
+            self.buzzDevice?.setMotorVibration(motors[motorIndex][0],
+                                               motors[motorIndex][1],
+                                               motors[motorIndex][2],
+                                               motors[motorIndex][3])
             
-            if motorIndex != motors.count - 1 {
-                motorIndex += 1
-            } else {
+            motorIndex += 1
+            if motorIndex == motors.count {
                 t.invalidate()
-                Timer.scheduledTimer(withTimeInterval: seconds, repeats: false) { t in
-                    self.buzzDevice?.stopMotors()
-                    t.invalidate()
-                }
+                self.buzzDevice?.stopMotors()
+                completion()
             }
         }
     }
     
+    func runEmotion(emotionName: Emotion, completion: @escaping () -> Void) {
+        switch emotionName {
+        case .Angry:
+            self.runAngry() { completion() }
+        case .Disgust:
+            self.runDisgust() { completion() }
+        case .Fearful:
+            self.runFearful() { completion() }
+        case .Happy:
+            self.runHappy() { completion() }
+        case .Neutral:
+            self.runNeutral() { completion() }
+        case .Sad:
+            self.runSad() { completion() }
+        case .Surprise:
+            self.runSurprised() { completion() }
+        default:
+            fatalError("no index category available")
+        }
+    }
+    
     func buzz10Times(emotionName: Emotion) {
-        var index = 1
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { t in
-            switch emotionName {
-            case .Angry:
-                self.runAngry()
-            case .Disgust:
-                self.runDisgust()
-            case .Fearful:
-                self.runFearful()
-            case .Happy:
-                self.runHappy()
-            case .Neutral:
-                self.runNeutral()
-            case .Sad:
-                self.runSad()
-            case .Surprise:
-                self.runSurprised()
-            default:
-                fatalError("no index category available")
+        var runCount = 0
+        while runCount == 10 {
+            runEmotion(emotionName: emotionName) {
+                runCount += 1
             }
-            print("buzz")
-            
-            if index != 10 {
-                index += 1
-            } else {
-                t.invalidate()
-                Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { t in
-                    t.invalidate()
-                }
-            }
+            print("buzzed")
         }
     }
 }

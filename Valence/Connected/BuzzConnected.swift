@@ -33,8 +33,8 @@ class BuzzConnected: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
           super.viewWillDisappear(animated)
-        buzzManager?.buzzDevice?.stopMotors()
-        recognizeModel.stopRecognizing()
+//        buzzManager?.buzzDevice?.stopMotors()
+//        recognizeModel.stopRecognizing()
           self.navigationController?.navigationBar.isHidden = false
     }
     

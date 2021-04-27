@@ -115,6 +115,7 @@ class TestViewController: UIViewController {
     }
     
     private func startBuzz() {
+        stopBuzz()
         buzzManager?.buzz10Times(emotionName: Emotion(rawValue: emotionName)!)
     }
     
