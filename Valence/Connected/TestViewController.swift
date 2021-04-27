@@ -40,13 +40,7 @@ class TestViewController: UIViewController {
         getSounds()
         dbRef = Database.database().reference()
         listenDb()
-        happyButton.isHidden = true
-        sadButton.isHidden = true
-        surpriseButton.isHidden = true
-        fearfulButton.isHidden = true
-        disgustButton.isHidden = true
-        angryButton.isHidden = true
-        neutralButton.isHidden = true
+        hideButtons()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -101,6 +95,17 @@ class TestViewController: UIViewController {
             }
         }
     }
+    
+    private func hideButtons() {
+        happyButton.isHidden = true
+        sadButton.isHidden = true
+        surpriseButton.isHidden = true
+        fearfulButton.isHidden = true
+        disgustButton.isHidden = true
+        angryButton.isHidden = true
+        neutralButton.isHidden = true
+    }
+    
     private func showButtons() {
         happyButton.isHidden = false
         sadButton.isHidden = false
@@ -117,6 +122,7 @@ class TestViewController: UIViewController {
     }
     
     private func stopBuzz() {
+        
         buzzManager?.buzzDevice?.stopMotors()
     }
     
@@ -158,6 +164,7 @@ class TestViewController: UIViewController {
     // Popup
     
     private func showPopup() {
+        hideButtons()
         let correct: Bool
         if emotionName == userAnswer {
             correct = true

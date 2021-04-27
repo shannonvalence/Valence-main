@@ -161,8 +161,10 @@ class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
             motorIndex += 1
             if motorIndex == motors.count {
                 t.invalidate()
-                self.buzzDevice?.stopMotors()
-                completion()
+                Timer.scheduledTimer(withTimeInterval: seconds, repeats: false) { _ in
+                    self.buzzDevice?.stopMotors()
+                    completion()
+                }
             }
         }
     }
@@ -209,8 +211,7 @@ class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
     
     func repeatEmotionBuzz(emotionName: Emotion) {
         self.runCount += 1
-        print("buzzed")
-        if runCount != 10 {
+        if runCount < 10 {
             self.runEmotion(emotionName: emotionName)
         }
     }
