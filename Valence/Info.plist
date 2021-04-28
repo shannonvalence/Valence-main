@@ -26,6 +26,12 @@
 	<true/>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Bluetooth is only used to communicate with your Neosensory device. Nothing else is collected.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Bluetooth is only used to communicate with your Neosensory device. Nothing else is collected.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Valence app does not use the camera to take a profile picture or upload profile photos. It&apos;s been used microphone only.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>To listen sounds around you!</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -72,5 +78,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<string>NO</string>
 </dict>
 </plist>

@@ -7,18 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		131F2E1025EC378000C2151F /* app-icon@2x-2 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 131F2E0F25EC378000C2151F /* app-icon@2x-2 copy.png */; };
-		131F2E1425EC3B2E00C2151F /* Untitled drawing.png in Resources */ = {isa = PBXBuildFile; fileRef = 131F2E1325EC3B2E00C2151F /* Untitled drawing.png */; };
-		131F2E1825EC3BF200C2151F /* Untitled drawing (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 131F2E1725EC3BF200C2151F /* Untitled drawing (1).png */; };
-		131F2E1B25EC40F200C2151F /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 131F2E1A25EC40F200C2151F /* image.png */; };
-		131F2E1F25EC478300C2151F /* white logo transparent background .png in Resources */ = {isa = PBXBuildFile; fileRef = 131F2E1E25EC478200C2151F /* white logo transparent background .png */; };
-		13286F4925EED98D00E6181F /* white logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 13286F4825EED98D00E6181F /* white logo.png */; };
-		1375A6DC25F7CB540085B1D7 /* white button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1375A6DB25F7CB540085B1D7 /* white button.png */; };
-		1375A6E025F866760085B1D7 /* background__2_.png in Resources */ = {isa = PBXBuildFile; fileRef = 1375A6DF25F866760085B1D7 /* background__2_.png */; };
-		1375A6E325F866EA0085B1D7 /* iOS App design.png in Resources */ = {isa = PBXBuildFile; fileRef = 1375A6E225F866EA0085B1D7 /* iOS App design.png */; };
-		1375A6E625F869510085B1D7 /* Untitled drawing (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 1375A6E525F869510085B1D7 /* Untitled drawing (2).png */; };
-		1375A6E925F86C830085B1D7 /* background__3__png.png in Resources */ = {isa = PBXBuildFile; fileRef = 1375A6E825F86C830085B1D7 /* background__3__png.png */; };
-		1375A6EC25FBD0290085B1D7 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1375A6EB25FBD0290085B1D7 /* Background.png */; };
 		AE58F9F225C8C8D5002D6CF2 /* BirdbrainBLE in Frameworks */ = {isa = PBXBuildFile; productRef = AE58F9F125C8C8D5002D6CF2 /* BirdbrainBLE */; };
 		AE58F9F625C8C914002D6CF2 /* BuzzBLE in Frameworks */ = {isa = PBXBuildFile; productRef = AE58F9F525C8C914002D6CF2 /* BuzzBLE */; };
 		AE63991F25CCF5D800008B84 /* TrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63991E25CCF5D800008B84 /* TrainViewController.swift */; };
@@ -37,7 +25,6 @@
 		AE9140A925BF467500678345 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE9140A825BF467500678345 /* Assets.xcassets */; };
 		AE9140AC25BF467500678345 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9140AA25BF467500678345 /* LaunchScreen.storyboard */; };
 		AE9140BE25BF569400678345 /* Connected.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9140BD25BF569400678345 /* Connected.storyboard */; };
-		AE9FF36325CCDDD800FA3E64 /* Emotion_Voice_Detection_Model1.h5 in Resources */ = {isa = PBXBuildFile; fileRef = AE9FF36225CCDDD800FA3E64 /* Emotion_Voice_Detection_Model1.h5 */; };
 		AEEDA8D525CBC8B000BBF3A9 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEDA8D425CBC8B000BBF3A9 /* FeedbackViewController.swift */; };
 		AEEEF94225CC716B004D98FC /* BuzzDeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEEF94125CC716B004D98FC /* BuzzDeviceManager.swift */; };
 		D5FC365D0407C49128EEBB81 /* Pods_Valence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C48F6ACB9182740B9C7B03C /* Pods_Valence.framework */; };
@@ -58,18 +45,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		131F2E0F25EC378000C2151F /* app-icon@2x-2 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon@2x-2 copy.png"; sourceTree = "<group>"; };
-		131F2E1325EC3B2E00C2151F /* Untitled drawing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Untitled drawing.png"; sourceTree = "<group>"; };
-		131F2E1725EC3BF200C2151F /* Untitled drawing (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Untitled drawing (1).png"; sourceTree = "<group>"; };
-		131F2E1A25EC40F200C2151F /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
-		131F2E1E25EC478200C2151F /* white logo transparent background .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white logo transparent background .png"; sourceTree = "<group>"; };
-		13286F4825EED98D00E6181F /* white logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white logo.png"; sourceTree = "<group>"; };
-		1375A6DB25F7CB540085B1D7 /* white button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white button.png"; sourceTree = "<group>"; };
-		1375A6DF25F866760085B1D7 /* background__2_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background__2_.png; sourceTree = "<group>"; };
-		1375A6E225F866EA0085B1D7 /* iOS App design.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS App design.png"; sourceTree = "<group>"; };
-		1375A6E525F869510085B1D7 /* Untitled drawing (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Untitled drawing (2).png"; sourceTree = "<group>"; };
-		1375A6E825F86C830085B1D7 /* background__3__png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background__3__png.png; sourceTree = "<group>"; };
-		1375A6EB25FBD0290085B1D7 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		2C48F6ACB9182740B9C7B03C /* Pods_Valence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Valence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C3237851B38C6E4F4DE30B /* Pods-Valence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Valence.release.xcconfig"; path = "Target Support Files/Pods-Valence/Pods-Valence.release.xcconfig"; sourceTree = "<group>"; };
 		A72CD7A4A343D926BF2FA928 /* Pods-Valence.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Valence.debug.xcconfig"; path = "Target Support Files/Pods-Valence/Pods-Valence.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,7 +66,6 @@
 		AE9140AB25BF467500678345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE9140AD25BF467500678345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE9140BD25BF569400678345 /* Connected.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Connected.storyboard; sourceTree = SOURCE_ROOT; };
-		AE9FF36225CCDDD800FA3E64 /* Emotion_Voice_Detection_Model1.h5 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Emotion_Voice_Detection_Model1.h5; sourceTree = "<group>"; };
 		AEEDA8D425CBC8B000BBF3A9 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		AEEEF94125CC716B004D98FC /* BuzzDeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuzzDeviceManager.swift; sourceTree = "<group>"; };
 		E91E247E263681580081B34A /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -169,7 +143,6 @@
 		AE91409B25BF467400678345 /* Valence */ = {
 			isa = PBXGroup;
 			children = (
-				AE9FF36225CCDDD800FA3E64 /* Emotion_Voice_Detection_Model1.h5 */,
 				AE7B1F8625C707B900F5A219 /* Extensions and Utils */,
 				AE9140B925BF4BB800678345 /* Login and Landing */,
 				AE9140BB25BF565A00678345 /* Connected */,
@@ -186,20 +159,8 @@
 		AE9140B725BF4BA900678345 /* Default Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				1375A6EB25FBD0290085B1D7 /* Background.png */,
-				1375A6E825F86C830085B1D7 /* background__3__png.png */,
-				1375A6E525F869510085B1D7 /* Untitled drawing (2).png */,
-				1375A6E225F866EA0085B1D7 /* iOS App design.png */,
-				1375A6DF25F866760085B1D7 /* background__2_.png */,
-				1375A6DB25F7CB540085B1D7 /* white button.png */,
-				13286F4825EED98D00E6181F /* white logo.png */,
-				131F2E1A25EC40F200C2151F /* image.png */,
-				131F2E1E25EC478200C2151F /* white logo transparent background .png */,
-				131F2E0F25EC378000C2151F /* app-icon@2x-2 copy.png */,
 				AE91409C25BF467400678345 /* AppDelegate.swift */,
 				AE91409E25BF467400678345 /* SceneDelegate.swift */,
-				131F2E1725EC3BF200C2151F /* Untitled drawing (1).png */,
-				131F2E1325EC3B2E00C2151F /* Untitled drawing.png */,
 			);
 			path = "Default Delegates";
 			sourceTree = "<group>";
@@ -319,24 +280,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1375A6DC25F7CB540085B1D7 /* white button.png in Resources */,
-				131F2E1825EC3BF200C2151F /* Untitled drawing (1).png in Resources */,
-				131F2E1025EC378000C2151F /* app-icon@2x-2 copy.png in Resources */,
-				1375A6E625F869510085B1D7 /* Untitled drawing (2).png in Resources */,
 				AE9140AC25BF467500678345 /* LaunchScreen.storyboard in Resources */,
 				AE9140A925BF467500678345 /* Assets.xcassets in Resources */,
 				AE7B1F8825C708AD00F5A219 /* GoogleService-Info.plist in Resources */,
-				1375A6E025F866760085B1D7 /* background__2_.png in Resources */,
-				131F2E1F25EC478300C2151F /* white logo transparent background .png in Resources */,
-				131F2E1425EC3B2E00C2151F /* Untitled drawing.png in Resources */,
-				AE9FF36325CCDDD800FA3E64 /* Emotion_Voice_Detection_Model1.h5 in Resources */,
 				AE9140BE25BF569400678345 /* Connected.storyboard in Resources */,
-				1375A6E925F86C830085B1D7 /* background__3__png.png in Resources */,
 				AE9140A425BF467400678345 /* Main.storyboard in Resources */,
-				1375A6E325F866EA0085B1D7 /* iOS App design.png in Resources */,
-				1375A6EC25FBD0290085B1D7 /* Background.png in Resources */,
-				131F2E1B25EC40F200C2151F /* image.png in Resources */,
-				13286F4925EED98D00E6181F /* white logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
