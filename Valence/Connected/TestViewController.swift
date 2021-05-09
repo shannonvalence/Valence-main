@@ -11,7 +11,7 @@ import UIKit
 import BuzzBLE
 import Firebase
 
-class TestViewController: UIViewController {
+class TestViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var overallScoreLbl: UILabel!
     @IBOutlet weak var happyButton: UIButton!
@@ -34,6 +34,7 @@ class TestViewController: UIViewController {
     private var totalAnswers: Int = 0
     private var correctAnswers: Int = 0
     private var overallScore: Int = 0
+    private var dispatchGroup: DispatchGroup?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +70,7 @@ class TestViewController: UIViewController {
     @IBAction func playSoundTapped(_ sender: Any) {
         guard let randomSound = sounds.randomElement() else { return }
         let starsRef = storageRef?.child(randomSound)
+        hideButtons()
         // Download in memory with a maximum allowed size of 1MB
         starsRef?.getData(maxSize: 1 * 1024 * 1024) { data, error in
             if let error = error {
@@ -82,12 +84,20 @@ class TestViewController: UIViewController {
                     
                     self.player = try AVAudioPlayer(data: data)
                     guard let player = self.player else { return }
+                    player.delegate = self
+                    
                     self.emotionName = randomSound.getEmotionName()
                     self.filename = randomSound
                     
+                    self.dispatchGroup = DispatchGroup()
+                    self.dispatchGroup?.enter()
                     player.play()
+                    self.dispatchGroup?.enter()
                     self.startTestBuzz()
-                    self.showButtons()
+                    
+                    self.dispatchGroup?.notify(queue: .main) {
+                        self.showButtons()
+                    }
                     
                 } catch let error {
                     print(error.localizedDescription)
@@ -236,6 +246,18 @@ class TestViewController: UIViewController {
         let percentage = Double(correctAnswers) / Double(totalAnswers) * 100
         overallScoreLbl.text = "Overall Score: \(percentage)%"
         overallScore = Int(percentage)
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        print("audio stopped")
+        self.dispatchGroup?.leave()
+    }
+}
+
+extension TestViewController: BuzzDeviceDelegate {
+    func buzzFinished() {
+        print("buzz finished")
+        self.dispatchGroup?.leave()
     }
 }
 

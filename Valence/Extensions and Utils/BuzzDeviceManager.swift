@@ -8,12 +8,17 @@
 import Foundation
 import BuzzBLE
 
+protocol BuzzDeviceDelegate {
+    func buzzFinished()
+}
+
 class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
     var buzzManager: BuzzManager?
     var buzzDevice: Buzz?
     var buzzBattery: Int?
     var buzzUUID: UUID?
     var runCount = 0
+    var delegate: TestViewController?
     
     init() {
         buzzManager = BuzzManager()
@@ -213,6 +218,8 @@ class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
         self.runCount += 1
         if runCount < 10 {
             self.runEmotion(emotionName: emotionName)
+        } else {
+            delegate?.buzzFinished()
         }
     }
 }
