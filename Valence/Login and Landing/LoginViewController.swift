@@ -8,9 +8,6 @@ import UIKit
 import Firebase
 import SwiftUI
 
-
-
-
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
@@ -45,8 +42,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         rememberMeToggle.isOn = UserDefaults.standard.bool(forKey: "RememberMe")
         
         if UserDefaults.standard.bool(forKey: "RememberMe") {
-            let user = Auth.auth().currentUser
-            if user != nil {
+            if Auth.auth().currentUser != nil {
                 performSegue(withIdentifier: "toHome", sender: nil)
             }
         }

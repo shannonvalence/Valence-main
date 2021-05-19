@@ -22,8 +22,10 @@ class KeychainHelper {
         if let deviceId = keychain[UserId.deviceId.rawValue] {
             return deviceId
         } else {
-            keychain[UserId.deviceId.rawValue] = UUID().uuidString
-            return keychain[UserId.deviceId.rawValue]!
+            let newDeviceId = UUID().uuidString
+            keychain[UserId.deviceId.rawValue] = newDeviceId
+            NSLog(">>> Generated a new deviceId = \(newDeviceId)")
+            return newDeviceId
         }
     }
     

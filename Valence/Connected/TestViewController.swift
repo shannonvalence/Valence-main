@@ -101,6 +101,7 @@ class TestViewController: UIViewController, AVAudioPlayerDelegate {
                     
                 } catch let error {
                     print(error.localizedDescription)
+                    NSLog("This sound can't be played: \(randomSound)")
                 }
             }
         }
