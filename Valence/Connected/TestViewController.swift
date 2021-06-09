@@ -92,7 +92,7 @@ class TestViewController: UIViewController, AVAudioPlayerDelegate {
                     self.dispatchGroup = DispatchGroup()
                     self.dispatchGroup?.enter()
                     player.play()
-                    self.dispatchGroup?.enter()
+//                    self.dispatchGroup?.enter()
                     self.startTestBuzz()
                     
                     self.dispatchGroup?.notify(queue: .main) {
@@ -251,7 +251,7 @@ class TestViewController: UIViewController, AVAudioPlayerDelegate {
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("audio stopped")
-        self.dispatchGroup?.leave()
+//        self.dispatchGroup?.leave()
     }
 }
 
