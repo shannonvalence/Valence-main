@@ -25,6 +25,10 @@ class RecognizeModel: ObservableObject {
 //            operationQueue.waitUntilAllOperationsAreFinished()
 //            operationQueue.addOperation {
                 if let result = self.soundRecognizerEngine.predict(samples: samples) {
+                    self.stopRecognizing()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.setup()
+                    }
 //                    if result.0 > 0.4
 //                    {
                         DispatchQueue.main.async {

@@ -32,10 +32,10 @@ class BuzzConnected: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-          super.viewWillDisappear(animated)
-//        buzzManager?.buzzDevice?.stopMotors()
-//        recognizeModel.stopRecognizing()
-          self.navigationController?.navigationBar.isHidden = false
+        super.viewWillDisappear(animated)
+        buzzManager?.buzzDevice?.stopMotors()
+        recognizeModel.stopRecognizing()
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

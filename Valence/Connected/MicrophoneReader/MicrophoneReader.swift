@@ -32,9 +32,6 @@ class MicrophoneReader {
         }
         
         audioRecordingManager.startRecording()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//            audioRecordingManager.stopRecording()
-//        }
     }
     
     func stopReading() {
