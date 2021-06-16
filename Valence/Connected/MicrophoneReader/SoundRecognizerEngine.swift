@@ -32,7 +32,7 @@ public class SoundRecognizerEngine {
         let bunchSize = self.windowLength
         
         let remaidToAddSamples = bunchSize - (self.samplesCollection.count)
-        samplesCollection.append(contentsOf: samples[0..<min(remaidToAddSamples, samples.count)])
+        samplesCollection.append(contentsOf: samples[0 ..< min(remaidToAddSamples, samples.count)])
 
         if (samplesCollection.count) >= bunchSize {
             let collectionToPredict = samplesCollection
@@ -45,10 +45,10 @@ public class SoundRecognizerEngine {
             let filteredSpectrogram = powerSpectrogram//.map { $0[0..<161] }
 
             do {
-                let mlArray = try MLMultiArray(shape: [NSNumber(value: 1), NSNumber(value: 20), NSNumber(value: 259), NSNumber(value: 1)], dataType: MLMultiArrayDataType.double)
+                let mlArray = try MLMultiArray(shape: [NSNumber(value: 1), NSNumber(value: 20), NSNumber(value: 259), NSNumber(value: 1)], dataType: .double)
                 
                 let flatSpectrogram = filteredSpectrogram.flatMap { $0 }
-                for index in 0..<flatSpectrogram.count {
+                for index in 0 ..< flatSpectrogram.count {
                     mlArray[index] = NSNumber(value: flatSpectrogram[index])
                 }
                 
@@ -58,7 +58,7 @@ public class SoundRecognizerEngine {
                 let result = try model.prediction(input: input, options: options)
                 
                 var array = [Double]()
-                for index in 0..<result.Identity.count {
+                for index in 0 ..< result.Identity.count {
                     array.append(result.Identity[index].doubleValue)
                 }
                 
@@ -70,14 +70,13 @@ public class SoundRecognizerEngine {
                 let secondPercentage = array.reduce(0) { $1 == maxPercentage ? $0 : max($0, $1) }
                 let secondCategory = (array.firstIndex(of: secondPercentage) ?? -1)
                 
-                var infoString = ""
-                
                 let categoryName = CategoryRepository.indexToCategoryMap[category] ?? "\(category)"
+                let secondCategoryName = CategoryRepository.indexToCategoryMap[secondCategory] ?? "\(secondCategory)"
+                
                 if category >= 0 {
-                    let categoryName = categoryName
-                    infoString = "Engine Category: \(categoryName)(\(category)) Percentage: \(Int(maxPercentage*100))%, 2nd: \(secondCategory) - \(secondPercentage)"
-                    
-                    print(infoString)
+                    print("🤖 \(getDate()) 1st prediction: \(categoryName)(\(category)) \(Int(maxPercentage*100))%. 2nd: \(secondCategoryName)(\(secondCategory)) - \(Int(secondPercentage*100))%")
+                } else {
+                    fatalError("category is less than 0?")
                 }
                 
                 predicatedResult = (maxPercentage, category, categoryName)
@@ -89,5 +88,13 @@ public class SoundRecognizerEngine {
         
         return predicatedResult
         
+    }
+    
+    private func getDate() -> String {
+        let time = Date()
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm:ss"
+        let stringDate = timeFormatter.string(from: time)
+        return stringDate
     }
 }

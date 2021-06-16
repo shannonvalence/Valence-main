@@ -70,8 +70,8 @@ class BuzzConnected: UIViewController {
     }
     
     func recognized() {
-        print("\(recognizeModel.categoryTitle) (\(recognizeModel.categoryIndex)) \(recognizeModel.percentage) %")
-        switch recognizeModel.categoryIndex {
+//        print("\(recognizeModel.prediction.categoryTitle) (\(recognizeModel.prediction.categoryIndex)) \(recognizeModel.prediction.percentage) %")
+        switch recognizeModel.prediction.categoryIndex {
         case 0:
             buzzManager?.runAngry()
         case 1:
