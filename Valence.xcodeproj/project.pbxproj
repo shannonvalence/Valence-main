@@ -41,6 +41,7 @@
 		E91E24B22636915C0081B34A /* MicrophoneReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E24AB2636915B0081B34A /* MicrophoneReader.swift */; };
 		E91E24B32636915C0081B34A /* RecognizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91E24AC2636915C0081B34A /* RecognizeModel.swift */; };
 		E91E24B6263691630081B34A /* model_v5.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E91E24B5263691630081B34A /* model_v5.mlmodel */; };
+		E96AD8D02670634400C47E16 /* newModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E96AD8CF2670634400C47E16 /* newModel.mlmodel */; };
 		E977546E26376D95001EB523 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E977546D26376D95001EB523 /* Date.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		E91E24AB2636915B0081B34A /* MicrophoneReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrophoneReader.swift; sourceTree = "<group>"; };
 		E91E24AC2636915C0081B34A /* RecognizeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeModel.swift; sourceTree = "<group>"; };
 		E91E24B5263691630081B34A /* model_v5.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = model_v5.mlmodel; sourceTree = "<group>"; };
+		E96AD8CF2670634400C47E16 /* newModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = newModel.mlmodel; sourceTree = "<group>"; };
 		E977546D26376D95001EB523 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +203,7 @@
 				E91E24AC2636915C0081B34A /* RecognizeModel.swift */,
 				E91E24A72636915A0081B34A /* SoundRecognizerEngine.swift */,
 				E91E24B5263691630081B34A /* model_v5.mlmodel */,
+				E96AD8CF2670634400C47E16 /* newModel.mlmodel */,
 			);
 			path = MicrophoneReader;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				AE91409D25BF467400678345 /* AppDelegate.swift in Sources */,
 				AE9140A725BF467400678345 /* Valence.xcdatamodeld in Sources */,
 				AE81049425CA24120070E6BE /* BuzzConnected.swift in Sources */,
+				E96AD8D02670634400C47E16 /* newModel.mlmodel in Sources */,
 				AE7869D325C7670000EB7B9D /* BackgroundProcess.swift in Sources */,
 				AE7B1F8425C707B300F5A219 /* Utilities.swift in Sources */,
 				AEEEF94225CC716B004D98FC /* BuzzDeviceManager.swift in Sources */,

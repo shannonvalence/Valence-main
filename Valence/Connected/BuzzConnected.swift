@@ -24,10 +24,10 @@ class BuzzConnected: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        cancellable = recognizeModel.objectWillChange.sink { [weak self] in
-//            self?.recognized()
-//        }
-//        recognizeModel.setup()
+        cancellable = recognizeModel.objectWillChange.sink { [weak self] in
+            self?.recognized()
+        }
+        recognizeModel.setup()
         self.navigationController?.navigationBar.isHidden = true
     }
     
@@ -86,6 +86,8 @@ class BuzzConnected: UIViewController {
             buzzManager?.runSad()
         case 6:
             buzzManager?.runSurprised()
+        case 7:
+            print("Silence has been detected.")
         default:
             fatalError("no index category available")
         }
