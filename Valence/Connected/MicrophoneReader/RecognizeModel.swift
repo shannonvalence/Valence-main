@@ -19,12 +19,11 @@ class RecognizeModel: ObservableObject {
 //        let operationQueue = OperationQueue()
 //        operationQueue.maxConcurrentOperationCount = 1
 
-        microphoneReader.startReading { [weak self] samples in
+        microphoneReader.startReading { [weak self] (samples, silenceDetected) in
             guard let `self` = self else { return }
-            
 //            operationQueue.waitUntilAllOperationsAreFinished()
 //            operationQueue.addOperation {
-                if let result = self.soundRecognizerEngine.predict(samples: samples) {
+                if let result = self.soundRecognizerEngine.predict(samples: samples, silenceDetected) {
                     self.stopRecognizing()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         self.setup()

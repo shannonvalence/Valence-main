@@ -86,8 +86,6 @@ class BuzzConnected: UIViewController {
             buzzManager?.runSad()
         case 6:
             buzzManager?.runSurprised()
-        case 7:
-            print("Silence has been detected.")
         default:
             fatalError("no index category available")
         }

@@ -11,25 +11,34 @@ import RosaKit
 
 public class SoundRecognizerEngine {
     
-    private var model: newModel
-//    private var model: model_v5
+    private var model: model_v5
     private var samplesCollection: [Double] = []
+    private var silenceDetected: Bool = false
 
     let melBasis: [[Double]]
     let sampleRate: Int
     let windowLength: Int
 
     public init(sampleRate: Int, windowLength length: Int) {
-        self.model = newModel()
-//        self.model = model_v5()
+        self.model = model_v5()
         
         self.sampleRate = sampleRate
         self.melBasis = [Double].createMelFilter(sampleRate: sampleRate, FTTCount: 1024, melsCount: 20)
         self.windowLength = length
     }
     
-    public func predict(samples: [Double]) -> (percentage: Double, category: Int, title: String)? {
+    public func predict(samples: [Double], _ silenceDetected: Bool) -> (percentage: Double, category: Int, title: String)? {
         var predicatedResult: (Double, Int, String)? = nil
+        
+        guard !silenceDetected else {
+            samplesCollection = []
+            if !self.silenceDetected {
+                print("😶 silence was detected")
+                self.silenceDetected = true
+            }
+            return predicatedResult
+        }
+        self.silenceDetected = false
         
         let bunchSize = self.windowLength
         
@@ -47,15 +56,14 @@ public class SoundRecognizerEngine {
             let filteredSpectrogram = powerSpectrogram//.map { $0[0..<161] }
 
             do {
-                let mlArray = try MLMultiArray(shape: [NSNumber(value: 1), NSNumber(value: 216)], dataType: .double)
-//                let mlArray = try MLMultiArray(shape: [NSNumber(value: 1), NSNumber(value: 20), NSNumber(value: 259), NSNumber(value: 1)], dataType: .double)
+                let mlArray = try MLMultiArray(shape: [NSNumber(value: 1), NSNumber(value: 20), NSNumber(value: 259), NSNumber(value: 1)], dataType: .double)
                 
                 let flatSpectrogram = filteredSpectrogram.flatMap { $0 }
-//                for index in 0 ..< flatSpectrogram.count {
-//                    mlArray[index] = NSNumber(value: flatSpectrogram[index])
-//                }
-                let input = newModelInput(dense_16_input: mlArray)
-//                let input = model_v5Input(conv2d_3_input: mlArray)
+                for index in 0 ..< flatSpectrogram.count {
+                    mlArray[index] = NSNumber(value: flatSpectrogram[index])
+                }
+                
+                let input = model_v5Input(conv2d_3_input: mlArray)
                 let options = MLPredictionOptions()
                 options.usesCPUOnly = true
                 let result = try model.prediction(input: input, options: options)

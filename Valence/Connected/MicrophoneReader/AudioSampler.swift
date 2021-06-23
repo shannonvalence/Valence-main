@@ -10,7 +10,7 @@ import CoreMedia
 
 private let kSampleBufferQueue = "com.cavap.SampleAudioBufferQueue"
 
-public typealias AudioSamplerHandler = (_ sampleData: Data, _ timeStamp: Int64, _ timeScale: Int64, _ samplesCount: Int64, _ sampleRate: Int64) -> Void
+public typealias AudioSamplerHandler = (_ sampleData: Data, _ timeStamp: Int64, _ timeScale: Int64, _ samplesCount: Int64, _ sampleRate: Int64, _ db: Float) -> Void
 
 class AudioSampler: NSObject, AVCaptureAudioDataOutputSampleBufferDelegate {
 
@@ -77,7 +77,7 @@ class AudioSampler: NSObject, AVCaptureAudioDataOutputSampleBufferDelegate {
                                     
             let data = Data(bytes: UnsafeMutableRawPointer(audioBuffer.mData!), count: Int(audioBuffer.mDataByteSize))
             
-            handler(data, presentationTimeStamp.value, Int64(presentationTimeStamp.timescale), samplesCount, Int64(sampleRate))
+            handler(data, presentationTimeStamp.value, Int64(presentationTimeStamp.timescale), samplesCount, Int64(sampleRate), connection.audioChannels[0].averagePowerLevel)
         }
     }
 }
