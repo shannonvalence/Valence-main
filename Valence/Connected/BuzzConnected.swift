@@ -50,7 +50,8 @@ class BuzzConnected: UIViewController {
     }
     
     @objc func updateBattery() {
-        batteryLabel.text = "Battery: \(buzzManager!.buzzBattery!)%"
+        guard let battery = buzzManager!.buzzBattery else { return }
+        batteryLabel.text = "Battery: \(battery)%"
     }
     
     @IBAction func logOutTapped(_ sender: Any) {
@@ -72,20 +73,20 @@ class BuzzConnected: UIViewController {
     func recognized() {
 //        print("\(recognizeModel.prediction.categoryTitle) (\(recognizeModel.prediction.categoryIndex)) \(recognizeModel.prediction.percentage) %")
         switch recognizeModel.prediction.categoryIndex {
-        case 0:
-            buzzManager?.runAngry()
-        case 1:
-            buzzManager?.runDisgust()
-        case 2:
-            buzzManager?.runFearful()
-        case 3:
-            buzzManager?.runHappy()
-        case 4:
-            buzzManager?.runNeutral()
-        case 5:
-            buzzManager?.runSad()
-        case 6:
-            buzzManager?.runSurprised()
+            case 0:
+                buzzManager?.runAngry()
+            case 1:
+                buzzManager?.runDisgust()
+            case 2:
+                buzzManager?.runFearful()
+            case 3:
+                buzzManager?.runHappy()
+            case 4:
+                buzzManager?.runNeutral()
+            case 5:
+                buzzManager?.runSad()
+            case 6:
+                buzzManager?.runSurprised()
         default:
             fatalError("no index category available")
         }
