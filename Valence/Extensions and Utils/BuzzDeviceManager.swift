@@ -12,7 +12,7 @@ protocol BuzzDeviceDelegate {
     func buzzFinished()
 }
 
-class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
+class BuzzDeviceManager: BuzzDelegate {
     var buzzManager: BuzzManager?
     var buzzDevice: Buzz?
     var buzzBattery: Int?
@@ -22,7 +22,6 @@ class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
     
     init() {
         buzzManager = BuzzManager()
-        buzzManager?.delegate = self
     }
     
     func scan() {

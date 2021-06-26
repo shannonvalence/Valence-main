@@ -42,6 +42,7 @@ class TestViewController: UIViewController, AVAudioPlayerDelegate {
         dbRef = Database.database().reference()
         listenDb()
         hideButtons()
+        buzzManager?.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
