@@ -12,7 +12,7 @@ protocol BuzzDeviceDelegate {
     func buzzFinished()
 }
 
-class BuzzDeviceManager: BuzzDelegate {
+class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
     var buzzManager: BuzzManager?
     var buzzDevice: Buzz?
     var buzzBattery: Int?
