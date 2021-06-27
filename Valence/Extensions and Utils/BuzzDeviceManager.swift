@@ -22,6 +22,7 @@ class BuzzDeviceManager: BuzzManagerDelegate, BuzzDelegate {
     
     init() {
         buzzManager = BuzzManager()
+        buzzManager?.delegate = self
     }
     
     func scan() {
