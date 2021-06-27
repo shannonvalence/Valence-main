@@ -12,7 +12,7 @@ public typealias MicrophoneReaderHandler = (_ audioPowerBuffer: [Double], _ sile
 class MicrophoneReader {
 
     private static let kIntToDoubleScale: Double = 32768.0
-    private let silenceThreshold: Float = -40
+    private let silenceThreshold: Float = -30
 
     private(set) var audioRecordingManager: AudioRecordingManager = AudioRecordingManager()
     
